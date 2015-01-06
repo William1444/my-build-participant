@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<!--buildConfigurationElement-->
+	<extension point="com.ibm.team.build.common.buildConfigurationElements">
+    	<buildConfigurationElement
+        	id="com.ibm.rtcexts.mybuildparticipant.buildconfigelement"
+	        name="My build configuration element" 
+	        description="my new element that is to be used by my build participant"
+	        buildPhase="PRE_BUILD" >
+	        <genericProperty
+	        	genericEditAllowed="false"
+            	name="com.ibm.rtcexts.mybuildparticipant.common.buildConfigProperty1"
+           		description="A build property." 
+                required="true"
+                />
+	        <genericProperty
+	        	genericEditAllowed="false"
+            	name="com.ibm.rtcexts.mybuildparticipant.common.buildConfigProperty2"
+           		description="Another build property." 
+                required="true"
+                />
+        </buildConfigurationElement> 
+    </extension>
+    
+	<!--buildDefinitionTemplate -->
+	<extension point="com.ibm.team.build.common.buildDefinitionTemplates">
+		<buildDefinitionTemplate
+    		id="com.ibm.rtcexts.mybuildparticipant.common.myTemplate"
+        	description="My new template containing my new build configuration element."
+        	name="my new build definition">
+			<buildConfigurationElement id="com.ibm.team.build.properties"/>
+			<buildConfigurationElement id="com.ibm.team.build.general"/>
+			<buildConfigurationElement id="com.ibm.rtcexts.mybuildparticipant.buildconfigelement"/>
+       		<buildConfigurationElement id="com.ibm.team.build.jazzscm"/>
+       		<buildConfigurationElement id="com.ibm.team.build.cmdline"/>
+       		<buildConfigurationElement id="com.ibm.team.build.ant"/>
+       		<buildConfigurationElement id="com.ibm.team.build.email"/>
+       	</buildDefinitionTemplate>
+	</extension>
+</plugin>
