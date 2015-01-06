@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="com.ibm.rtcexts.mybuildparticipant.updatesite" url="file:///tmp/site">
+      local update site for the mybuildparticipant plugin
+   </description>
+   <feature url="features/com.ibm.rtcexts.mybuildparticipant.client.feature_1.0.2.jar" id="com.ibm.rtcexts.mybuildparticipant.client.feature" version="1.0.2"/>
+</site>

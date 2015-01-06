@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<!--The editor tab in the build configuration-->
+	<extension point="com.ibm.team.build.ui.buildConfigurationElementEditors">
+    	<buildConfigurationElementEditor
+        	configurationElementId="com.ibm.rtcexts.mybuildparticipant.buildconfigelement"
+        	name="my new element editor's name"
+        	class="com.ibm.rtcexts.mybuildparticipant.client.ConfigurationElementEditorFactory" 
+    	/>
+    </extension>
+</plugin>

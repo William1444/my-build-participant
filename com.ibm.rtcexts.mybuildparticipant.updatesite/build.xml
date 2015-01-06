@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="com.ibm.rtcexts.mybuildparticipant.updatesite" basedir=".">
+
+    
+	<target name="updatesite" description="description" >
+		<eclipse.publish.featuresAndBundles
+		    metadataRepository="file:/tmp/repo2"
+		    artifactRepository="file:/tmp/repo2"
+		    compress="true"
+			site="file:/${basedir}/site.xml"
+		    >
+			<features dir="../com.ibm.rtcexts.mybuildparticipant.feature" includes="com.ibm.rtcexts.mybuildparticipant.feature_1.0.2" />
+			<bundles dir="../com.ibm.rtcexts.mybuildparticipant.common" includes="com.ibm.rtcexts.mybuildparticipant.common_1.0.2.jar" />
+			<bundles dir="../com.ibm.rtcexts.mybuildparticipant.client" includes="com.ibm.rtcexts.mybuildparticipant.client_1.0.1.jar" />
+		</eclipse.publish.featuresAndBundles>
+		<mkdir dir="/tmp/repo2/features" />
+		<mkdir dir="/tmp/repo2/plugins" />
+		<copy todir="/tmp/repo2/plugins" file="../com.ibm.rtcexts.mybuildparticipant.common/com.ibm.rtcexts.mybuildparticipant.common_1.0.2.jar" />
+		<copy todir="/tmp/repo2/plugins" file="../com.ibm.rtcexts.mybuildparticipant.client/com.ibm.rtcexts.mybuildparticipant.client_1.0.1.jar" />
+		<copy todir="/tmp/repo2/features" file="../com.ibm.rtcexts.mybuildparticipant.feature/com.ibm.rtcexts.mybuildparticipant.feature_1.0.2.jar" />	
+
+    </target>
+	
+
+</project>
